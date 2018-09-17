@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.7.4
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: 26-Ago-2018 às 18:54
+- Versão do servidor: 10.1.28-MariaDB
+- PHP Version: 5.6.32
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="professor" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="alunos">
+                CREATE TABLE `alunos` (
+                  `cod_acesso` int(11) NOT NULL AUTO_INCREMENT,
+                  `imagem` longblob NOT NULL,
+                  `nome` varchar(60) NOT NULL,
+                  `serie` varchar(4) NOT NULL,
+                  `ano_cadastro` varchar(10) NOT NULL,
+                  PRIMARY KEY (`cod_acesso`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:trigger name="tr_insert_ranking2">
+                CREATE TRIGGER `tr_insert_ranking2` AFTER INSERT ON `alunos`
+                 FOR EACH ROW INSERT INTO ranking2 (id_aluno, pontos)VALUES(new.cod_acesso, pontos)
+            </pma:trigger>
+            <pma:table name="ctrl_adm">
+                CREATE TABLE `ctrl_adm` (
+                  `id_adm` int(11) NOT NULL AUTO_INCREMENT,
+                  `nome` varchar(60) NOT NULL,
+                  `usuario` varchar(30) NOT NULL,
+                  `senha` varchar(8) NOT NULL,
+                  PRIMARY KEY (`id_adm`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="professores">
+                CREATE TABLE `professores` (
+                  `id_professor` int(11) NOT NULL AUTO_INCREMENT,
+                  `nome` varchar(60) NOT NULL,
+                  `usuario` varchar(30) NOT NULL,
+                  `senha` varchar(8) NOT NULL,
+                  PRIMARY KEY (`id_professor`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="ranking">
+                CREATE TABLE `ranking` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `id_aluno` int(11) NOT NULL,
+                  `pontos` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="ranking2">
+                CREATE TABLE `ranking2` (
+                  `id_aluno` int(11) NOT NULL,
+                  `pontos` int(11) NOT NULL,
+                  PRIMARY KEY (`id_aluno`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'professor'
+    -->
+    <database name="professor">
+        <!-- Tabela alunos -->
+        <table name="alunos">
+            <column name="cod_acesso">1</column>
+            <column name="imagem"></column>
+            <column name="nome">Alice Machado</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">2</column>
+            <column name="imagem"></column>
+            <column name="nome">Carla Pilato</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">3</column>
+            <column name="imagem"></column>
+            <column name="nome">Giovana Castro</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">4</column>
+            <column name="imagem"></column>
+            <column name="nome">João Carlos Rocha</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">5</column>
+            <column name="imagem"></column>
+            <column name="nome">Lara Souza</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">6</column>
+            <column name="imagem"></column>
+            <column name="nome">Leandro Alves</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">7</column>
+            <column name="imagem"></column>
+            <column name="nome">Marcela Meireles</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">8</column>
+            <column name="imagem"></column>
+            <column name="nome">Maria Vitoria Silva</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">9</column>
+            <column name="imagem"></column>
+            <column name="nome">Maurico Gonçalves Junior</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">10</column>
+            <column name="imagem"></column>
+            <column name="nome">Nicolas Kawakami</column>
+            <column name="serie">1A</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">11</column>
+            <column name="imagem"></column>
+            <column name="nome">Kaleb Antunes</column>
+            <column name="serie">1E</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">12</column>
+            <column name="imagem"></column>
+            <column name="nome">Sakura Kinomoto</column>
+            <column name="serie">1C</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">13</column>
+            <column name="imagem"></column>
+            <column name="nome">Arturia Pendragão</column>
+            <column name="serie">1C</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">16</column>
+            <column name="imagem"></column>
+            <column name="nome">Charlotte de Cambridge</column>
+            <column name="serie">1E</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">17</column>
+            <column name="imagem"></column>
+            <column name="nome">George de Cambridge</column>
+            <column name="serie">1E</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">18</column>
+            <column name="imagem"></column>
+            <column name="nome">Charlotte Teste2</column>
+            <column name="serie">1E</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <table name="alunos">
+            <column name="cod_acesso">20</column>
+            <column name="imagem"></column>
+            <column name="nome">Sakura</column>
+            <column name="serie">1E</column>
+            <column name="ano_cadastro">2018</column>
+        </table>
+        <!-- Tabela ctrl_adm -->
+        <table name="ctrl_adm">
+            <column name="id_adm">1</column>
+            <column name="nome">Camila Cardozo</column>
+            <column name="usuario">cah</column>
+            <column name="senha">20061991</column>
+        </table>
+        <!-- Tabela professores -->
+        <table name="professores">
+            <column name="id_professor">3</column>
+            <column name="nome">Jorge Soares</column>
+            <column name="usuario">Jorge</column>
+            <column name="senha">16161616</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">4</column>
+            <column name="nome">Ruan Carlos</column>
+            <column name="usuario">Ruan</column>
+            <column name="senha">12121212</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">5</column>
+            <column name="nome">Willian Wallace </column>
+            <column name="usuario">Will</column>
+            <column name="senha">12345679</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">6</column>
+            <column name="nome">Jose Miguel</column>
+            <column name="usuario">Jose</column>
+            <column name="senha">78945612</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">7</column>
+            <column name="nome">Anielle Dias</column>
+            <column name="usuario">Anielle</column>
+            <column name="senha">75315982</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">8</column>
+            <column name="nome">Coriane Jacos</column>
+            <column name="usuario">Coriane</column>
+            <column name="senha">46791382</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">9</column>
+            <column name="nome">Elara Meandrus</column>
+            <column name="usuario">Elara</column>
+            <column name="senha">75317829</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">10</column>
+            <column name="nome">Alexandre Dumas</column>
+            <column name="usuario">Alexandre</column>
+            <column name="senha">12378952</column>
+        </table>
+        <table name="professores">
+            <column name="id_professor">11</column>
+            <column name="nome">Carlos Cubas</column>
+            <column name="usuario">cubas</column>
+            <column name="senha">12345678</column>
+        </table>
+        <!-- Tabela ranking -->
+        <table name="ranking">
+            <column name="id">1</column>
+            <column name="id_aluno">4</column>
+            <column name="pontos">9</column>
+        </table>
+        <table name="ranking">
+            <column name="id">2</column>
+            <column name="id_aluno">4</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking">
+            <column name="id">3</column>
+            <column name="id_aluno">1</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking">
+            <column name="id">4</column>
+            <column name="id_aluno">1</column>
+            <column name="pontos">8</column>
+        </table>
+        <table name="ranking">
+            <column name="id">5</column>
+            <column name="id_aluno">3</column>
+            <column name="pontos">5</column>
+        </table>
+        <table name="ranking">
+            <column name="id">6</column>
+            <column name="id_aluno">3</column>
+            <column name="pontos">8</column>
+        </table>
+        <table name="ranking">
+            <column name="id">7</column>
+            <column name="id_aluno">5</column>
+            <column name="pontos">2</column>
+        </table>
+        <table name="ranking">
+            <column name="id">8</column>
+            <column name="id_aluno">5</column>
+            <column name="pontos">1</column>
+        </table>
+        <table name="ranking">
+            <column name="id">9</column>
+            <column name="id_aluno">5</column>
+            <column name="pontos">9</column>
+        </table>
+        <table name="ranking">
+            <column name="id">10</column>
+            <column name="id_aluno">5</column>
+            <column name="pontos">5</column>
+        </table>
+        <table name="ranking">
+            <column name="id">11</column>
+            <column name="id_aluno">4</column>
+            <column name="pontos">8</column>
+        </table>
+        <table name="ranking">
+            <column name="id">12</column>
+            <column name="id_aluno">5</column>
+            <column name="pontos">9</column>
+        </table>
+        <table name="ranking">
+            <column name="id">13</column>
+            <column name="id_aluno">10</column>
+            <column name="pontos">0</column>
+        </table>
+        <table name="ranking">
+            <column name="id">14</column>
+            <column name="id_aluno">4</column>
+            <column name="pontos">0</column>
+        </table>
+        <table name="ranking">
+            <column name="id">15</column>
+            <column name="id_aluno">4</column>
+            <column name="pontos">11</column>
+        </table>
+        <!-- Tabela ranking2 -->
+        <table name="ranking2">
+            <column name="id_aluno">1</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">2</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">3</column>
+            <column name="pontos">11</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">4</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">5</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">6</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">7</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">8</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">9</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">10</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">11</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">12</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">13</column>
+            <column name="pontos">29</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">14</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">15</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">16</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">17</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">18</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">19</column>
+            <column name="pontos">10</column>
+        </table>
+        <table name="ranking2">
+            <column name="id_aluno">20</column>
+            <column name="pontos">20</column>
+        </table>
+    </database>
+</pma_xml_export>
